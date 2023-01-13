@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kafka-prod-dep
+  labels:
+    app: kafka-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-prod
+  template:
+    metadata:
+      labels:
+        app: kafka-prod
+    spec:
+      containers:
+      - name: kafka-prod
+        image: sourabhyadav/prod-new-04

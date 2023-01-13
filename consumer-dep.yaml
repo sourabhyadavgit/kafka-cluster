@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kafka-consumer-dep
+  labels:
+    app: kafka-con
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-con
+  template:
+    metadata:
+      labels:
+        app: kafka-con
+    spec:
+      containers:
+      - name: kafka-con
+        image: sourabhyadav/cons-new

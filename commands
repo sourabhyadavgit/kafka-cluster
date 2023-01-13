@@ -1,0 +1,7 @@
+[appuser@kafka-deployment-7cc5d4577d-jrdz9 ~]$ kafka-topics --create --bootstrap-server localhost:29092 --replication-factor 1 --partitions 1 --topic sytest-topic        
+Created topic sytest-topic.
+[appuser@kafka-deployment-7cc5d4577d-jrdz9 ~]$ 
+C:\Users\saura\OneDrive\Desktop\Project\kafka-cluster>kubectl scale deploy kafka-prod-dep --replicas=1 
+deployment.apps/kafka-prod-dep scaled
+kubectl config set-context --current --namespace=kafkaplaypen
+kubectl config view --minify -o jsonpath='{..namespace}'
